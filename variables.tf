@@ -9,3 +9,8 @@ variable "app_region" {
 variable "aws_region" {
   description = "AWS region"
 }
+
+variable "aws_bucket_cors_origins" {
+  description = "CORS origins for AWS bucket"
+  default = []
+}

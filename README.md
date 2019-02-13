@@ -58,3 +58,7 @@ These variables can be provided:
 
     Enter a value:
   ```
+
+## AWS bucket
+
+AWS bucket will be set up with cors rules allowing `POST`, `GET`, `PUT` from heroku app url and any additional domains specified in `aws_bucket_cors_origins`. Bucket name will be set to `<app_name>-static-assets`

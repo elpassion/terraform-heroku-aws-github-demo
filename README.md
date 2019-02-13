@@ -66,3 +66,7 @@ AWS bucket will be set up with cors rules allowing `POST`, `GET`, `PUT` from her
 ## S3 Access
 
 User for s3 access will be set up with credentials set in heroku env variables (`S3_ACCESS_KEY_ID`, `S3_SECRET_KEY`)
+
+## Cloudfront distribution for static assets
+
+Along with S3 buck Cloudfront distribution will be set up and coudfront domain will be set in heroku env variables (`CLOUDFRONT_DOMAIN`)

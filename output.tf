@@ -13,3 +13,7 @@ output "s3_bucket_domain_name" {
 output "s3_bucket_regional_domain_name" {
   value = "${aws_s3_bucket.static_assets.bucket_regional_domain_name}"
 }
+
+output "cloudfront_domain_name" {
+  value = "${aws_cloudfront_distribution.static_assets.domain_name}"
+}

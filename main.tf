@@ -166,3 +166,14 @@ resource "aws_s3_bucket_policy" "static_assets_bucket_policy" {
   bucket = "${aws_s3_bucket.static_assets.id}"
   policy = "${data.aws_iam_policy_document.static_assets_bucket_policy.json}"
 }
+
+resource "github_repository" "default" {
+  name = "${var.app_name}"
+  description = "Main repository for app code"
+
+  private = "${var.github_private_repo}"
+  has_issues = true
+  has_projects = false
+  has_wiki = true
+  allow_squash_merge = false
+}

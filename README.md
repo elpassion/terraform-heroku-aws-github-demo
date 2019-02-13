@@ -80,3 +80,7 @@ User for s3 access will be set up with credentials set in heroku env variables (
 ## Cloudfront distribution for static assets
 
 Along with S3 buck Cloudfront distribution will be set up and coudfront domain will be set in heroku env variables (`CLOUDFRONT_DOMAIN`)
+
+## Github
+
+Repository under `organization/app_name` will be created. You can controll if repo should be private by setting `github_private_repo` variable.

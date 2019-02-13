@@ -17,3 +17,7 @@ output "s3_bucket_regional_domain_name" {
 output "cloudfront_domain_name" {
   value = "${aws_cloudfront_distribution.static_assets.domain_name}"
 }
+
+output "git_clone_url" {
+  value = "${github_repository.default.git_clone_url}"
+}

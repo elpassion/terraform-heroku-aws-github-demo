@@ -18,3 +18,8 @@ variable "aws_bucket_cors_origins" {
 variable "github_organization" {
   description = "Github organization"
 }
+
+variable "github_private_repo" {
+  description = "Should github repository be private?"
+  default = true
+}

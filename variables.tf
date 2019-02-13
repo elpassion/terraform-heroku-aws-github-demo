@@ -21,5 +21,20 @@ variable "github_organization" {
 
 variable "github_private_repo" {
   description = "Should github repository be private?"
-  default = true
+  default     = true
+}
+
+variable "github_team_members" {
+  description = "Awesome project team members"
+  default     = []
+}
+
+variable "github_team_maintainers" {
+  description = "Awesome project team maintainers"
+  default     = []
+}
+
+variable "github_repo_admins" {
+  description = "Admin of project repository"
+  default     = []
 }

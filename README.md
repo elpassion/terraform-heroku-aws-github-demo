@@ -84,3 +84,5 @@ Along with S3 buck Cloudfront distribution will be set up and coudfront domain w
 ## Github
 
 Repository under `organization/app_name` will be created. You can controll if repo should be private by setting `github_private_repo` variable.
+Team with members from `github_team_members` and maintainers from `github_team_mainters` will be added under organization and attached to project.
+Admins provided in `github_repo_admins` will be added to repository.

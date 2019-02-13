@@ -168,12 +168,48 @@ resource "aws_s3_bucket_policy" "static_assets_bucket_policy" {
 }
 
 resource "github_repository" "default" {
-  name = "${var.app_name}"
+  name        = "${var.app_name}"
   description = "Main repository for app code"
 
-  private = "${var.github_private_repo}"
-  has_issues = true
-  has_projects = false
-  has_wiki = true
+  private            = "${var.github_private_repo}"
+  has_issues         = true
+  has_projects       = false
+  has_wiki           = true
   allow_squash_merge = false
+}
+
+resource "github_team" "default" {
+  name        = "${var.app_name} awesome team"
+  description = "Awesome team working on ${var.app_name} project"
+  privacy     = "closed"
+}
+
+resource "github_team_repository" "default" {
+  team_id    = "${github_team.default.id}"
+  repository = "${github_repository.default.name}"
+  permission = "push"
+}
+
+resource "github_team_membership" "members" {
+  username = "${element(var.github_team_members, count.index)}"
+  team_id  = "${github_team.default.id}"
+  role     = "member"
+
+  count = "${length(var.github_team_members)}"
+}
+
+resource "github_team_membership" "maintainers" {
+  username = "${element(var.github_team_maintainers, count.index)}"
+  team_id  = "${github_team.default.id}"
+  role     = "maintainer"
+
+  count = "${length(var.github_team_maintainers)}"
+}
+
+resource "github_repository_collaborator" "admin" {
+  repository = "${github_repository.default.name}"
+  username   = "${element(var.github_team_maintainers, count.index)}"
+  permission = "admin"
+
+  count = "${length(var.github_repo_admins)}"
 }

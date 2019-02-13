@@ -30,6 +30,16 @@ $ export AWS_SECRET_ACCESS_KEY="asecretkey"
 
 Or by using shared credentials file. The default location is $HOME/.aws/credentials (You can use `aws configure` to create this file).
 
+## GitHub credentials
+
+Github credentials can be provided by using environment variables:
+
+```
+export GITHUB_TOKEN="githubtoken"
+```
+
+You'll also need to provide organization using either `terraform.tfvars` file or `--var` flag
+
 ## Heroku application
 
 To create heroku app you'll need to provide two variables:

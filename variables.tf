@@ -14,3 +14,7 @@ variable "aws_bucket_cors_origins" {
   description = "CORS origins for AWS bucket"
   default     = []
 }
+
+variable "github_organization" {
+  description = "Github organization"
+}

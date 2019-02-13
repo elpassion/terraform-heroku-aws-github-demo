@@ -4,6 +4,10 @@ provider "aws" {
   region = "${var.aws_region}"
 }
 
+provider "github" {
+  organization = "${var.github_organization}"
+}
+
 resource "heroku_app" "default" {
   name   = "${var.app_name}"
   region = "${var.app_region}"

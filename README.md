@@ -19,6 +19,17 @@ login <heroku_email>
 password <heroku_api_key>
 ```
 
+## AWS credentials
+
+AWS credentials can be provided by using environment variables:
+
+```
+$ export AWS_ACCESS_KEY_ID="anaccesskey"
+$ export AWS_SECRET_ACCESS_KEY="asecretkey"
+```
+
+Or by using shared credentials file. The default location is $HOME/.aws/credentials (You can use `aws configure` to create this file).
+
 ## Heroku application
 
 To create heroku app you'll need to provide two variables:

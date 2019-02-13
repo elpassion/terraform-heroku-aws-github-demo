@@ -5,3 +5,7 @@ variable "app_name" {
 variable "app_region" {
   description = "Heroku application region"
 }
+
+variable "aws_region" {
+  description = "AWS region"
+}

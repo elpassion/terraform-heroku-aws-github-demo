@@ -61,4 +61,8 @@ These variables can be provided:
 
 ## AWS bucket
 
-AWS bucket will be set up with cors rules allowing `POST`, `GET`, `PUT` from heroku app url and any additional domains specified in `aws_bucket_cors_origins`. Bucket name will be set to `<app_name>-static-assets`
+AWS bucket will be set up with cors rules allowing `POST`, `GET`, `PUT` from heroku app url and any additional domains specified in `aws_bucket_cors_origins`. Bucket name will be set to `<app_name>-static-assets`. Bucket name and bucket domain will be set also as env variables on heroku (`S3_BUCKET`, `S3_BUCKET_DOMAIN`)
+
+## S3 Access
+
+User for s3 access will be set up with credentials set in heroku env variables (`S3_ACCESS_KEY_ID`, `S3_SECRET_KEY`)

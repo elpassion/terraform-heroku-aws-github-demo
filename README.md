@@ -61,7 +61,6 @@ These variables can be provided:
 
 * terraform will ask for missing variables
   ```
-  terraform plan
   $ terraform apply
   var.app_name
     Heroku application name
@@ -79,7 +78,7 @@ User for s3 access will be set up with credentials set in heroku env variables (
 
 ## Cloudfront distribution for static assets
 
-Along with S3 buck Cloudfront distribution will be set up and coudfront domain will be set in heroku env variables (`CLOUDFRONT_DOMAIN`)
+Along with S3 bucket Cloudfront distribution will be set up and coudfront domain will be set in heroku env variables (`CLOUDFRONT_DOMAIN`)
 
 ## Github
 

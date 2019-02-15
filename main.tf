@@ -25,6 +25,11 @@ resource "heroku_app" "default" {
   ]
 }
 
+resource "heroku_addon" "postgresql" {
+  app  = "${heroku_app.default.name}"
+  plan = "heroku-postgresql:hobby-dev"
+}
+
 locals {
   cors_allowed_origins = [
     "https://${var.app_name}.herokuapp.com", # Unfortunatelly have to be done this way to avoid cyclic dependencies
